@@ -1,0 +1,31 @@
+<html>
+    <head>
+      <link rel="stylesheet" href="https://pyscript.net/alpha/pyscript.css" />
+      <script defer src="https://pyscript.net/alpha/pyscript.js"></script>
+      <py-env>
+        - numpy
+        - matplotlib
+        - pandas
+      </py-env>
+    </head>
+
+  <body>
+    <h1 color="red">Let's plot random numbers</h1>
+    <div id="plot"></div>
+  <py-script output="plot">
+      import matplotlib.pyplot as plt
+      import numpy as np
+      import pandas as pd
+      x = np.random.randint(15,500, 600)
+      y = np.random.randint(500,1255, 600)
+      fig, ax = plt.subplots()
+      ax.scatter(x, y)
+      fig
+    </py-script>
+  <py-script>
+      df= pd.DataFrame({'col1_X':x, 
+                    'col2_Y':y})
+      df.head(10)
+    </py-script>
+  </body>
+</html>
